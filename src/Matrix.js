@@ -7,7 +7,15 @@ export default class Matrix extends Component {
 
   constructor() {
     super()
+    this.state = {
+      selectedColor: '#FFF'
+    }
   }
+
+  // write a method that takes in a single argument of a hex color string (i.e. '#fff') and sets the selected color to that
+  setSelectedColor = (hex) => {this.setState({selectedColor: hex})}
+
+  getSelectedColor = () => {this.state.selectedColor}
 
   genRow = (vals) => (
     vals.map((val, idx) => <Cell key={idx} color={val} />)
